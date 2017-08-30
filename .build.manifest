@@ -1,0 +1,788 @@
+{
+  "layers": [
+    "layer:basic", 
+    "layer:openstack", 
+    "layer:openstack-principle", 
+    "layer:openstack-api", 
+    "designate", 
+    "interface:mysql-shared", 
+    "interface:rabbitmq", 
+    "interface:keystone", 
+    "interface:hacluster", 
+    "interface:openstack-ha", 
+    "interface:bind-rndc", 
+    "build"
+  ], 
+  "signatures": {
+    ".build.manifest": [
+      "build", 
+      "dynamic", 
+      "unchecked"
+    ], 
+    ".gitignore": [
+      "layer:openstack-api", 
+      "static", 
+      "3e3cf42ea49dae7d2430f165dba371c29f98363e77034105169e2dd66511e9f0"
+    ], 
+    ".gitreview": [
+      "layer:openstack-api", 
+      "static", 
+      "db73e5b291e194b8a30f1abf45d2ed126f817795be5d3ddaddf8696704dfe646"
+    ], 
+    "LICENSE": [
+      "layer:openstack-api", 
+      "static", 
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ], 
+    "Makefile": [
+      "layer:basic", 
+      "static", 
+      "b7ab3a34e5faf79b96a8632039a0ad0aa87f2a9b5f0ba604e007cafb22190301"
+    ], 
+    "README.md": [
+      "designate", 
+      "static", 
+      "f8535ff548aa22159bf841d1da5da409fa6dfbd4d0ad1ddb84ff3555536bb807"
+    ], 
+    "bin/layer_option": [
+      "layer:basic", 
+      "static", 
+      "621b556cd208005e131e9f648859294347da9376609745a73ca2e808dd2032f9"
+    ], 
+    "config.yaml": [
+      "designate", 
+      "dynamic", 
+      "f57a528d319b50b1d602d43b513a85fc35d746e84015d3f034c328645dff323b"
+    ], 
+    "copyright": [
+      "layer:basic", 
+      "static", 
+      "f6740d66fd60b60f2533d9fcb53907078d1e20920a0219afce7182e2a1c97629"
+    ], 
+    "hooks/amqp-relation-broken": [
+      "interface:rabbitmq", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/amqp-relation-changed": [
+      "interface:rabbitmq", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/amqp-relation-departed": [
+      "interface:rabbitmq", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/amqp-relation-joined": [
+      "interface:rabbitmq", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/cluster-relation-broken": [
+      "interface:openstack-ha", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/cluster-relation-changed": [
+      "interface:openstack-ha", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/cluster-relation-departed": [
+      "interface:openstack-ha", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/cluster-relation-joined": [
+      "interface:openstack-ha", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/config-changed": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/dns-backend-relation-broken": [
+      "interface:bind-rndc", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/dns-backend-relation-changed": [
+      "interface:bind-rndc", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/dns-backend-relation-departed": [
+      "interface:bind-rndc", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/dns-backend-relation-joined": [
+      "interface:bind-rndc", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/ha-relation-broken": [
+      "interface:hacluster", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/ha-relation-changed": [
+      "interface:hacluster", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/ha-relation-departed": [
+      "interface:hacluster", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/ha-relation-joined": [
+      "interface:hacluster", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/hook.template": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/identity-service-relation-broken": [
+      "interface:keystone", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/identity-service-relation-changed": [
+      "interface:keystone", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/identity-service-relation-departed": [
+      "interface:keystone", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/identity-service-relation-joined": [
+      "interface:keystone", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/install": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/leader-elected": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/leader-settings-changed": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/relations/bind-rndc/.gitignore": [
+      "interface:bind-rndc", 
+      "static", 
+      "996ad92a4713473baf27997a048901fdfa0039b9497bcc916f3f50b9000c1b96"
+    ], 
+    "hooks/relations/bind-rndc/.gitreview": [
+      "interface:bind-rndc", 
+      "static", 
+      "3fcac9c56b4a6477e2fbf25333e9996a5ed27d1fc0a9fa8faa8baeafaf404b25"
+    ], 
+    "hooks/relations/bind-rndc/LICENSE": [
+      "interface:bind-rndc", 
+      "static", 
+      "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    ], 
+    "hooks/relations/bind-rndc/README.md": [
+      "interface:bind-rndc", 
+      "static", 
+      "517516d2908a70e457a500ff30154f6dd89cb7972fbcfab53fcc4a46cc5a5611"
+    ], 
+    "hooks/relations/bind-rndc/__init__.py": [
+      "interface:bind-rndc", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/bind-rndc/copyright": [
+      "interface:bind-rndc", 
+      "static", 
+      "8262b8bb7fcd54e1b21f47dbfee4875bcb00d841b08aaa516cefddfadeecb550"
+    ], 
+    "hooks/relations/bind-rndc/interface.yaml": [
+      "interface:bind-rndc", 
+      "static", 
+      "54dc10c8d7c693e79a0aa7c514afd042ac0b1ac88f673744d6b58fc044a12f42"
+    ], 
+    "hooks/relations/bind-rndc/provides.py": [
+      "interface:bind-rndc", 
+      "static", 
+      "efe6a9cf87bfa61ee5295c89716cd79dba6a77770ec9684249c1e47ccd16ab89"
+    ], 
+    "hooks/relations/bind-rndc/requires.py": [
+      "interface:bind-rndc", 
+      "static", 
+      "9665a556969b68a4d07d7752c9577bb25ba1940a31b60a2e0266692a38590170"
+    ], 
+    "hooks/relations/bind-rndc/test-requirements.txt": [
+      "interface:bind-rndc", 
+      "static", 
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ], 
+    "hooks/relations/bind-rndc/tox.ini": [
+      "interface:bind-rndc", 
+      "static", 
+      "635c931fa336b9e3265ea1328a4eda6b8d2918d34f44373e38f83af258a87201"
+    ], 
+    "hooks/relations/hacluster/.gitignore": [
+      "interface:hacluster", 
+      "static", 
+      "996ad92a4713473baf27997a048901fdfa0039b9497bcc916f3f50b9000c1b96"
+    ], 
+    "hooks/relations/hacluster/.gitreview": [
+      "interface:hacluster", 
+      "static", 
+      "bc049abf9595c9722f232bdc6f89ed5d9758266f1f695a44d2b4222f603f8cc2"
+    ], 
+    "hooks/relations/hacluster/README.md": [
+      "interface:hacluster", 
+      "static", 
+      "7fad91e409c6e559cdb76d11c89c325531adc25679049a629a28c4f890755f1f"
+    ], 
+    "hooks/relations/hacluster/__init__.py": [
+      "interface:hacluster", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/hacluster/common.py": [
+      "interface:hacluster", 
+      "static", 
+      "323ea0a7eb4a6d3ed0374e23ea829e3c5e77f7d582480339a17a8a18012f7a72"
+    ], 
+    "hooks/relations/hacluster/copyright": [
+      "interface:hacluster", 
+      "static", 
+      "7a296596102da98cecee289a195e00d6af44241911321699b3d4d4af93f11893"
+    ], 
+    "hooks/relations/hacluster/interface.yaml": [
+      "interface:hacluster", 
+      "static", 
+      "19077a57f0360fd689c5c49066042399bdaa26d3eec5fc460a2bc01b1f3b83e6"
+    ], 
+    "hooks/relations/hacluster/requires.py": [
+      "interface:hacluster", 
+      "static", 
+      "7fc8764d565ea70f5327985367da4a899d40f615cabb56e2888b815a4dda566f"
+    ], 
+    "hooks/relations/hacluster/test-requirements.txt": [
+      "interface:hacluster", 
+      "static", 
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ], 
+    "hooks/relations/hacluster/tox.ini": [
+      "interface:hacluster", 
+      "static", 
+      "fddda083331b862b1ddcf57736bfca6dbc639aae19641cdabd51c1953bf73d1d"
+    ], 
+    "hooks/relations/keystone/.gitignore": [
+      "interface:keystone", 
+      "static", 
+      "996ad92a4713473baf27997a048901fdfa0039b9497bcc916f3f50b9000c1b96"
+    ], 
+    "hooks/relations/keystone/.gitreview": [
+      "interface:keystone", 
+      "static", 
+      "41f48aa501c00b638d8eaa762435f8cd2648304f6d24d314f21aaf2e1eac1209"
+    ], 
+    "hooks/relations/keystone/__init__.py": [
+      "interface:keystone", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/keystone/copyright": [
+      "interface:keystone", 
+      "static", 
+      "7a296596102da98cecee289a195e00d6af44241911321699b3d4d4af93f11893"
+    ], 
+    "hooks/relations/keystone/interface.yaml": [
+      "interface:keystone", 
+      "static", 
+      "8d5e486ebec02146c8017b78091f4b282117e688a9d00e93f189c439e21dd237"
+    ], 
+    "hooks/relations/keystone/requires.py": [
+      "interface:keystone", 
+      "static", 
+      "058390c4e5d3caaf4ae9657356880879e8bb0d0ec2deb0a1d9b5811480499f21"
+    ], 
+    "hooks/relations/keystone/test-requirements.txt": [
+      "interface:keystone", 
+      "static", 
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ], 
+    "hooks/relations/keystone/tox.ini": [
+      "interface:keystone", 
+      "static", 
+      "635c931fa336b9e3265ea1328a4eda6b8d2918d34f44373e38f83af258a87201"
+    ], 
+    "hooks/relations/mysql-shared/.gitignore": [
+      "interface:mysql-shared", 
+      "static", 
+      "996ad92a4713473baf27997a048901fdfa0039b9497bcc916f3f50b9000c1b96"
+    ], 
+    "hooks/relations/mysql-shared/.gitreview": [
+      "interface:mysql-shared", 
+      "static", 
+      "9769002069a443fdff98767430aca6eaa283929aa3801d31783a35049bc65b18"
+    ], 
+    "hooks/relations/mysql-shared/README.md": [
+      "interface:mysql-shared", 
+      "static", 
+      "9650396b48f4b754822ecc0d30bad1ed28380253267f0b5b6f5e5a61a26220f8"
+    ], 
+    "hooks/relations/mysql-shared/__init__.py": [
+      "interface:mysql-shared", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql-shared/copyright": [
+      "interface:mysql-shared", 
+      "static", 
+      "1e2afbd75c71affa132ae7ee3327cb29b5e4b9d9705f27dfd03857c326f50c5c"
+    ], 
+    "hooks/relations/mysql-shared/interface.yaml": [
+      "interface:mysql-shared", 
+      "static", 
+      "9ae8f9c7ba8a7b3a45e0278b5e0349489dc6f2801ef4de2838b7356d8e3f2759"
+    ], 
+    "hooks/relations/mysql-shared/peer.py": [
+      "interface:mysql-shared", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql-shared/provides.py": [
+      "interface:mysql-shared", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/mysql-shared/requires.py": [
+      "interface:mysql-shared", 
+      "static", 
+      "f5ce904875c5209993b7ca4c9c9a70fcf58699676ea274942d14255bb3faebe1"
+    ], 
+    "hooks/relations/mysql-shared/test-requirements.txt": [
+      "interface:mysql-shared", 
+      "static", 
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ], 
+    "hooks/relations/mysql-shared/tox.ini": [
+      "interface:mysql-shared", 
+      "static", 
+      "635c931fa336b9e3265ea1328a4eda6b8d2918d34f44373e38f83af258a87201"
+    ], 
+    "hooks/relations/openstack-ha/.gitignore": [
+      "interface:openstack-ha", 
+      "static", 
+      "996ad92a4713473baf27997a048901fdfa0039b9497bcc916f3f50b9000c1b96"
+    ], 
+    "hooks/relations/openstack-ha/.gitreview": [
+      "interface:openstack-ha", 
+      "static", 
+      "2ee4e35c589f28b65e9466b91891c6fa79150c020d6cf90cf873b39f1ee12cc5"
+    ], 
+    "hooks/relations/openstack-ha/__init__.py": [
+      "interface:openstack-ha", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/openstack-ha/interface.yaml": [
+      "interface:openstack-ha", 
+      "static", 
+      "e8a6df5f6efd118030f006bbae260c36dabb9c33fbb4c738054f4ea70d313854"
+    ], 
+    "hooks/relations/openstack-ha/peers.py": [
+      "interface:openstack-ha", 
+      "static", 
+      "53bbed3eab9436003d38ef588d6a389ab7a132e7094b9e20e456ff067e4ee74f"
+    ], 
+    "hooks/relations/openstack-ha/test-requirements.txt": [
+      "interface:openstack-ha", 
+      "static", 
+      "3558e0b4cd18d77a7710361489d770b83841e7fc35f43a87459f35a346e45415"
+    ], 
+    "hooks/relations/openstack-ha/tox.ini": [
+      "interface:openstack-ha", 
+      "static", 
+      "635c931fa336b9e3265ea1328a4eda6b8d2918d34f44373e38f83af258a87201"
+    ], 
+    "hooks/relations/rabbitmq/.gitignore": [
+      "interface:rabbitmq", 
+      "static", 
+      "ddc61d479977d318682280fa2b18bcb6cb9a1b0e0e7897cea3d14d5c8d222e68"
+    ], 
+    "hooks/relations/rabbitmq/.gitreview": [
+      "interface:rabbitmq", 
+      "static", 
+      "349d26f6831dcd1c64c57d044d9c6d51b60b54676822f9eab1eeb43d33129793"
+    ], 
+    "hooks/relations/rabbitmq/__init__.py": [
+      "interface:rabbitmq", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "hooks/relations/rabbitmq/copyright": [
+      "interface:rabbitmq", 
+      "static", 
+      "7a296596102da98cecee289a195e00d6af44241911321699b3d4d4af93f11893"
+    ], 
+    "hooks/relations/rabbitmq/interface.yaml": [
+      "interface:rabbitmq", 
+      "static", 
+      "43f27433b34f8bc7f6f67e608716ad2b3120f0590c95b0d011599a85a452f4d5"
+    ], 
+    "hooks/relations/rabbitmq/requires.py": [
+      "interface:rabbitmq", 
+      "static", 
+      "78f40496ffe75fa25a196949f31e6748fa643e62f246833a6863566ab8c94956"
+    ], 
+    "hooks/relations/rabbitmq/test-requirements.txt": [
+      "interface:rabbitmq", 
+      "static", 
+      "1e8672952cfe8ad7c98dd9554126023419552234ab39b6064c939e6d8b3585cc"
+    ], 
+    "hooks/relations/rabbitmq/tox.ini": [
+      "interface:rabbitmq", 
+      "static", 
+      "07b54409aca1f8cd9360774e295c9d97b6c0327abe7cc2551ff13a601a62f622"
+    ], 
+    "hooks/shared-db-relation-broken": [
+      "interface:mysql-shared", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/shared-db-relation-changed": [
+      "interface:mysql-shared", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/shared-db-relation-departed": [
+      "interface:mysql-shared", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/shared-db-relation-joined": [
+      "interface:mysql-shared", 
+      "dynamic", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/start": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/stop": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/update-status": [
+      "layer:basic", 
+      "static", 
+      "f976e7ff3e347d44dac22626507f2a88042ba913aeebca7ffdcd5f6179b83683"
+    ], 
+    "hooks/upgrade-charm": [
+      "layer:basic", 
+      "static", 
+      "8fb6559bf4d4b7cdf1b857564c1d7265df98e863a4746fcbae092f141e59d97e"
+    ], 
+    "icon.svg": [
+      "designate", 
+      "static", 
+      "662db547339b4096145855a3b097d26e44f5076df0a201ca466241c3b1cf131a"
+    ], 
+    "layer.yaml": [
+      "designate", 
+      "dynamic", 
+      "52de07086289ff3108232fdfff99ffc3d41980d5d9a43c90cce5e02f07589178"
+    ], 
+    "lib/charm/__init__.py": [
+      "designate", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "lib/charm/openstack/__init__.py": [
+      "designate", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "lib/charm/openstack/designate.py": [
+      "designate", 
+      "static", 
+      "a0cbe2912a04334e5aa2ba06347c108b089f2b934701fec72c71888716970e72"
+    ], 
+    "lib/charms/layer/__init__.py": [
+      "layer:basic", 
+      "static", 
+      "71a8b901f7e64a6b1b61959fc25819bafc9c9905e37a918615b9f949295095a4"
+    ], 
+    "lib/charms/layer/basic.py": [
+      "layer:basic", 
+      "static", 
+      "d09706ef3a224eb60d34366a2867c382791aa30157ab5b77eda37f29731df2e2"
+    ], 
+    "lib/charms/layer/execd.py": [
+      "layer:basic", 
+      "static", 
+      "af1f2409869f990cdb33cffc4120fb6713876e8e680ac5f064ea510bbdca1073"
+    ], 
+    "metadata.yaml": [
+      "designate", 
+      "dynamic", 
+      "796758070501b2f553361510db5c8f21ddad16fa3a89a524823455c139f2fbbc"
+    ], 
+    "reactive/__init__.py": [
+      "layer:basic", 
+      "static", 
+      "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    ], 
+    "reactive/designate_handlers.py": [
+      "designate", 
+      "static", 
+      "81c4da0ec3eb72c3bdbf6c071afc48ac7ec216bf89459ebe5aa81e3c11c1b667"
+    ], 
+    "reactive/designate_utils.py": [
+      "designate", 
+      "static", 
+      "1a2850bd91fe087dae1f3572be8fcd886865f058813a5ae597f8d152f4aba4ba"
+    ], 
+    "reactive/layer_openstack.py": [
+      "layer:openstack", 
+      "static", 
+      "0927fdb6556b3a6ccabc13731e3af59121cf61e869efa5daf7c7e82301e0352c"
+    ], 
+    "reactive/layer_openstack_api.py": [
+      "layer:openstack-api", 
+      "static", 
+      "d4038cab6eed082020addde3bec3f8658baf494886b7d8d4fd34131bb2ccf886"
+    ], 
+    "requirements.txt": [
+      "designate", 
+      "static", 
+      "0f1c70d27e26005a96d66ad54482877ae20f7737693c833e29dd72bd6ac24892"
+    ], 
+    "templates/__init__.py": [
+      "layer:openstack", 
+      "static", 
+      "f7ba598b86c4008a791f4d62bf9c8fb041a55600e0919550cec9d9682a0eb6a1"
+    ], 
+    "templates/ceph.conf": [
+      "layer:openstack", 
+      "static", 
+      "ef6039a6e806cda0ad3552d68fd3a75ad8be2176b028b393ed8db7d702c2f8b7"
+    ], 
+    "templates/git.upstart": [
+      "layer:openstack", 
+      "static", 
+      "a1d3e125c84e4f47720e874275784ea5a14c0ce2feda58b68c9da3bad7233fb7"
+    ], 
+    "templates/haproxy.cfg": [
+      "layer:openstack", 
+      "static", 
+      "4f81bdd8b1dc9e205bffc0d49c03bd79067f49bf152b2c5a21c7bca6d04a7f62"
+    ], 
+    "templates/memcached.conf": [
+      "layer:openstack", 
+      "static", 
+      "11e3f4948e1f2369476d6c3a191040ea61799cdffbe5e2e07ced2b350a6872e7"
+    ], 
+    "templates/mitaka/designate.conf": [
+      "designate", 
+      "static", 
+      "237c26d99c87da213e8c0b6a237bcadd99efa3097d0d58cb813228efbebe377e"
+    ], 
+    "templates/mitaka/neutron_sink.cfg": [
+      "designate", 
+      "static", 
+      "f9031c7b3fe9982b71b4590b9dbab1da536b24e42cb32b6b0c76bd6363649bab"
+    ], 
+    "templates/mitaka/nova_sink.cfg": [
+      "designate", 
+      "static", 
+      "7be6454c77b38dc6bd36c5bfbc87168c8ee8a214c9fb6e5e6ec1d29e9b6abbb9"
+    ], 
+    "templates/mitaka/pools.yaml": [
+      "designate", 
+      "static", 
+      "18f42c2a823024ee82f0e9008e9cb97f8b687da867bef09c6f814461dd06058e"
+    ], 
+    "templates/novarc": [
+      "designate", 
+      "static", 
+      "1b96ca9afa2d53c448c7f50b3b147913b13c8dbd0c2aae51ed7f8da1ae84a8e8"
+    ], 
+    "templates/openstack": [
+      "designate", 
+      "static", 
+      "c5f72a0ca753aeae71666d79185b9333fc39ba4ba7171e0790147822d41cce03"
+    ], 
+    "templates/openstack_https_frontend.conf": [
+      "layer:openstack", 
+      "static", 
+      "4afd5841b8db9c26b11d1c287cd10bc992c76dd4fb895bf09495ded0ed27a88e"
+    ], 
+    "templates/parts/database": [
+      "layer:openstack", 
+      "static", 
+      "e3f2baec6d717f89f32d7080408c6cfb375f0611c22e9c7a0d5d54528a2af0bc"
+    ], 
+    "templates/parts/section-database": [
+      "layer:openstack", 
+      "static", 
+      "c14f5ca7145c9db2cc36c45de4d36588b5487970a0b463eb783a402d7503c49c"
+    ], 
+    "templates/parts/section-keystone-authtoken": [
+      "layer:openstack", 
+      "static", 
+      "a43203756e26c309def692fcf50252b34819aa24ae56aa92a519327ba7b6aa78"
+    ], 
+    "templates/parts/section-rabbitmq-oslo": [
+      "layer:openstack", 
+      "static", 
+      "b9aa6f00d66f548af3a60452b8f52101f3f0b799c4ac3faf0ac95adab1298881"
+    ], 
+    "templates/parts/section-zeromq": [
+      "layer:openstack", 
+      "static", 
+      "a81b5e26d8f8b4800438e73b92402f9da6c34e94b240a50d6cd854ada12fa32e"
+    ], 
+    "templates/rndc.key": [
+      "designate", 
+      "static", 
+      "73de4428681b273fd78a17edd612cc6cc2593b4d6ee6fcb8e6ef1e78a432bcfc"
+    ], 
+    "test-requirements.txt": [
+      "designate", 
+      "static", 
+      "fb951e0a4dfa0e53dd32851650543f09a8f3306dc07a7e7d23e37d3f75b6c58a"
+    ], 
+    "tests/README.md": [
+      "designate", 
+      "static", 
+      "8d640d8637d924379fda20714a99a1b32714cda03210fa965b44d283a4ab8b36"
+    ], 
+    "tests/basic_deployment.py": [
+      "designate", 
+      "static", 
+      "97f7fa1353285ed196bb85fa460e5f41671676f0c312338feeec1e9b57908ec4"
+    ], 
+    "tests/gate-basic-artful-pike": [
+      "designate", 
+      "static", 
+      "2dd8a358b1278f3c171584107e3e0646b4898b2a36201995a70674b446a497bc"
+    ], 
+    "tests/gate-basic-trusty-mitaka": [
+      "designate", 
+      "static", 
+      "6330b9489bc5dd8511486477c61adda6acc13c798e88df6e510d166e73f6d3b4"
+    ], 
+    "tests/gate-basic-xenial-mitaka": [
+      "designate", 
+      "static", 
+      "a2ae93e4e2a99c3f78c4b65d02337437df8c60600733b2c21e764954cd5232b4"
+    ], 
+    "tests/gate-basic-xenial-newton": [
+      "designate", 
+      "static", 
+      "417d9fa1fa1127c56003c5319466ee97eaa704169e065efbc8c56b1f490a0c15"
+    ], 
+    "tests/gate-basic-xenial-ocata": [
+      "designate", 
+      "static", 
+      "8360ddbb0634119e017d6902c98d3f5962ce2f781a7636a6b08903c53cec30c3"
+    ], 
+    "tests/gate-basic-xenial-pike": [
+      "designate", 
+      "static", 
+      "4a260eabc664b670faf101197daedcaac5be6515267e3e3be9d1433590860794"
+    ], 
+    "tests/gate-basic-zesty-ocata": [
+      "designate", 
+      "static", 
+      "6b9741f0d266c68aaf200114c26b703cc60f18f13bc748c749bbc0709cd9eb01"
+    ], 
+    "tests/tests.yaml": [
+      "designate", 
+      "static", 
+      "ac6092cab9006763624b83b51f914292a724c465169ffc0e927782509e264c25"
+    ], 
+    "tox.ini": [
+      "designate", 
+      "static", 
+      "8a12bf2793432a584ef8840e8d4db9d910204a592993e1751b02dbdf6096e76a"
+    ], 
+    "wheelhouse/Jinja2-2.9.6.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "ddaa01a212cd6d641401cb01b605f4a4d9f37bfc93043d7f760ec70fb99ff9ff"
+    ], 
+    "wheelhouse/MarkupSafe-1.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "a6be69091dac236ea9c6bc7d012beab42010fa914c459791d627dad4910eb665"
+    ], 
+    "wheelhouse/PyYAML-3.12.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+    ], 
+    "wheelhouse/Tempita-0.5.2.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "cacecf0baa674d356641f1d406b8bff1d756d739c46b869a54de515d08e6fc9c"
+    ], 
+    "wheelhouse/charmhelpers-0.18.1.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "15dbae866550b724fb81ce501e118386b28a554110bd45f8ce3f62139411cf9f"
+    ], 
+    "wheelhouse/charms.openstack-0.0.1.dev1.zip": [
+      "layer:openstack", 
+      "dynamic", 
+      "67fcd4a729960db6c889d98d5392ade81322c67e435145d107d54d108b28384f"
+    ], 
+    "wheelhouse/charms.reactive-0.4.7.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "f023f5aef267786db1be51209610487171ba56e848f7b1c49877b06337000256"
+    ], 
+    "wheelhouse/netaddr-0.7.19.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "38aeec7cdd035081d3a4c306394b19d677623bf76fa0913f6695127c7753aefd"
+    ], 
+    "wheelhouse/netifaces-0.10.6.tar.gz": [
+      "layer:openstack", 
+      "dynamic", 
+      "0c4da523f36d36f1ef92ee183f2512f3ceb9a9d2a45f7d19cda5a42c6689ebe0"
+    ], 
+    "wheelhouse/pip-8.1.2.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "4d24b03ffa67638a3fa931c09fd9e0273ffa904e95ebebe7d4b1a54c93d7b732"
+    ], 
+    "wheelhouse/pyaml-17.8.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "9cf5ff8fc3b82aab1428e67ab2040b52a9f39433517cb7c5b852498ed3a75740"
+    ], 
+    "wheelhouse/six-1.10.0.tar.gz": [
+      "layer:basic", 
+      "dynamic", 
+      "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+    ]
+  }
+}
